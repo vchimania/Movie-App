@@ -65,6 +65,17 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/a
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
+
+
+
+Assignment Details:
+Users can explore a curated list of movies organized based on their year of release.
+A search feature is implemented, allowing users to easily find specific movies within the application.Users can seamlessly move through different pages of the application using a hamburger menu for an intuitive navigation experience.
+Detailed information about each movie is accessible, including descriptions, directors, and trailers, providing users with a thorough understanding of the content.
+The application incorporates different libraries to ensure a clean and visually appealing user interface, enhancing the overall user experience.
+Tech Stack : ReactJS, HTML, CSS, Tailwind
+Libraries: Framer Motion, React Icons, React Infinite Scroll, react Lazy Load Image Component, React Slugify, React Toastify
+
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
