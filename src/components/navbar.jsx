@@ -10,7 +10,6 @@ function Navbar() {
   const { header, user } = useContext(Contextpage);
   const [activemobile, setActivemobile] = useState(false);
 
-  // console.log(user)
   const Navdata = [
     {
       id: 1,

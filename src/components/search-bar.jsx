@@ -23,7 +23,6 @@ function Searchbar() {
   };
 
   const onKeyUp = (query) => {
-    // console.log(query)
     if (query !== "") {
       query = query.trim();
 
@@ -37,8 +36,9 @@ function Searchbar() {
 
   return (
     <>
-      <title>MovieFix</title>
-
+      <div className="text-center text-white bg-slate-800 font-bold text-xl uppercase py-4 italic">
+        MovieFix
+      </div>
       <div className="w-full bg-gradient-to-r from-fuchsia-500 to-cyan-500 h-[10rem] md:h-[12rem]">
         <div className="h-full w-full bg-black/30 flex justify-center items-center">
           <input

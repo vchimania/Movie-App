@@ -16,7 +16,6 @@ export function MovieProviderWrapper({ children }) {
   const [backgenre, setBackGenre] = useState(false);
 
   const APIKEY = "2dca580c2a14b55200e784d157207b4d";
-  console.log({ APIKEY });
   useEffect(() => {
     if (page < 1) {
       setPage(1); // Increment page to 1 if it is less than 1.

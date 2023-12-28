@@ -1,6 +1,5 @@
 import React, { useEffect, useContext } from "react";
 
-// import { Pagebtn } from './Pagebtn';
 import InfiniteScroll from "react-infinite-scroll-component";
 import Contextpage from "../wrapper";
 import Genre from "./genre";
@@ -41,6 +40,20 @@ function Movies() {
     That's why we are first setting page=0, then context page will automatically increment page=1 and the function will run. 
     */
 
+  const sortedMovies = movies
+    .map((movie) => ({
+      ...movie,
+      releaseYear: new Date(movie.release_date).getFullYear(),
+    }))
+    .sort((a, b) => b.releaseYear - a.releaseYear);
+
+  // Create an object to group movies by release year
+  const moviesByYear = sortedMovies.reduce((acc, movie) => {
+    const year = movie.releaseYear;
+    acc[year] = acc[year] ? [...acc[year], movie] : [movie];
+    return acc;
+  }, {});
+
   return (
     <div className="w-full bg-[#10141e] md:p-10 mb-20 md:mb-0">
       <Genre />
@@ -54,7 +67,6 @@ function Movies() {
             <span className="loader m-10"></span>
           ) : (
             <>
-              {/* {console.log(movies.length)} */}
               <InfiniteScroll
                 className="w-full md:p-2 flex flex-wrap relative justify-evenly md:justify-around"
                 dataLength={movies.length} //This is important field to render the next data
@@ -64,8 +76,15 @@ function Movies() {
                 scrollThreshol={0.9}
                 style={{ overflow: "hidden" }}
               >
-                {movies.map((movie) => (
-                  <Moviecard key={movie.id} movie={movie} />
+                {Object.entries(moviesByYear).map(([year, movies]) => (
+                  <div key={year} className="text-center mb-4">
+                    <h2 className="text-white">{year}</h2>
+                    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 px-4">
+                      {movies.map((movie) => (
+                        <Moviecard key={movie.id} movie={movie} />
+                      ))}
+                    </div>
+                  </div>
                 ))}
               </InfiniteScroll>
             </>

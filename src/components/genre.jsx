@@ -23,8 +23,10 @@ function Genre() {
   return (
     <>
       <title>MovieFix | Genres</title>
-
-      <div className="flex flex-wrap justify-center px-2">
+      <div
+        className="md:px-5 flex flex-row max-w-full flex-start overflow-x-auto relative
+              scrollbar-thin scrollbar-thumb-gray-500/20 scrollbar-track-gray-900/90 md:pb-3"
+      >
         {genres.map((genre) => (
           <button
             onClick={() => setActiveGenre(genre.id)}

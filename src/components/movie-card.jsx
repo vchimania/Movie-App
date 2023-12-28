@@ -40,7 +40,7 @@ function Moviecard({ movie }) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 1 }}
       layout
-      className="card relative w-full md:w-60 h-[410px] md:h-[360px] my-3 mx-4 md:my-5 md:mx-0 cursor-pointer rounded-xl overflow-hidden"
+      className="card border border-white relative w-full md:w-60 h-[410px] md:h-[360px] my-3 px-4 md:my-5 md:mx-0 cursor-pointer rounded-xl overflow-hidden"
     >
       {/* bookmark buttons */}
       <button
